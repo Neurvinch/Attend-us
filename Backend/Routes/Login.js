@@ -24,13 +24,36 @@ router.post('/student/login',async (res,req) =>{
   res.json({token});
 });
 
-router.post('/Teacher/login',AuthToken,async (res,req) =>{
-    const {username, paswword} = req.body
+router.post('/Teacher/login',async (res,req) =>{
+    const {username, password} = req.body
 
      const Teacher = await teacher.findOne({username});
-     if(!Teacher ||hh ){}
+     if(!Teacher ||  !(await bcrypt.compare(password, Teacher.password ))){
+    return res.status(400).json({message: "Invalid username or password"}) 
+};
+     const token = jwt.sign({id:Teacher._id}, Jkey,{expiresIn: '1h'});
+    
+     res.json({token});
 
 })
+
+router.post('/Hod/login',async(res,req)=>{
+    const {username,password} = req.body
+
+    const Hod = await Hod.findOne({username});
+
+    if(!Hod || !(await  bcrypt.compare(password,jwt , {expiresIn:'1h'})){
+        return res.status(400).json({message: "Invalid username or password"});
+      }
+    
+      const token = jwt.sign({id : Hod._id}, jkey, {expiresIn:'1h'});
+      res.json({token});
+
+
+});
+
+
+
 
 
 
