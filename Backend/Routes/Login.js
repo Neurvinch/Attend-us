@@ -42,7 +42,7 @@ router.post('/Hod/login',async(res,req)=>{
 
     const hod = await Hod.findOne({username});
 
-    if(!Hod || !(await  bcrypt.compare(password,jwt , {expiresIn:'1h'})){
+    if(!Hod || !(await  bcrypt.compare(password, hod.password))){
         return res.status(400).json({message: "Invalid username or password"});
       }
     
