@@ -40,17 +40,25 @@ router.post('/Teacher/login',async (res,req) =>{
 router.post('/Hod/login',async(res,req)=>{
     const {username,password} = req.body
 
-    const Hod = await Hod.findOne({username});
+    const hod = await Hod.findOne({username});
 
     if(!Hod || !(await  bcrypt.compare(password,jwt , {expiresIn:'1h'})){
         return res.status(400).json({message: "Invalid username or password"});
       }
     
-      const token = jwt.sign({id : Hod._id}, jkey, {expiresIn:'1h'});
+      const token = jwt.sign({id : hod._id}, jkey, {expiresIn:'1h'});
       res.json({token});
 
 
 });
+router.get('./profile',AuthToken, async(res,req ) =>{
+      const userId = req.user.id
+      Student.findById(userId)
+      .then((student)=> res.json(student))
+      .catch((err)=>res.status(500).json({message :" error while fetching it!",err}))
+
+
+})
 
 
 
