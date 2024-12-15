@@ -11,6 +11,7 @@
         const  tpdetails = jwt.verify(token, // secret key JWT
 
         )
+        // this should be used in routes to get id
        req.user = tpdetails; 
        next();
     } catch (error) {

@@ -60,6 +60,10 @@ router.get('./profile',AuthToken, async(res,req ) =>{
 
 })
 
+//Hod Black Amarking logics
+
+
+module.exports = router;
 
 
 
