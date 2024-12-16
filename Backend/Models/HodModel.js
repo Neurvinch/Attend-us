@@ -6,3 +6,10 @@ const HodSchema = new mongoose.schema({
 });
 
 module.exports = mongoose.model('HodModel',HodSchema);
+
+
+////
+
+
+
+//
