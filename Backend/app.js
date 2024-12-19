@@ -7,7 +7,7 @@ const AuthRoutes = require('../Backend/Routes/Login');
  const app = express();
  app.use(express.json());
 
- app.use('/apiv1',AuthRoutes);
+ app.use('/apiV1',AuthRoutes);
 
 
  ap.listen(5000,()=>{
