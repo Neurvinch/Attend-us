@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/header';
 import SignInPage from './Components/signin';
 import HomeStd from './Components/homehod';
@@ -12,10 +12,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/homehod" element={<HomeHod />} />
+        <Route path="/homeHod" element={<HomeHod />} />
         <Route path="/signin" element={<SignInPage />} />
-        <Route path="/homestd" element={<HomeStd />} />
-        <Route path="/homestaff" element={<HomeStaff />} />
+        <Route path="/homeStd" element={<HomeStd />} />
+        <Route path="/homeStaff" element={<HomeStaff />} />
       </Routes>
     </Router>
   );
