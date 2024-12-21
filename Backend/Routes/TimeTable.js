@@ -11,7 +11,7 @@ router.get('/', async (res,req)  =>{
 
         
     } catch (error) {
-        res.statusCode(400).json(message:" Error in fetching data");
+        res.statusCode(400).json({message:" Error in fetching data"});
     }
 })
 
