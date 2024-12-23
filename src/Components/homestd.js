@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
-
+import { useNavigate } from 'react-router-dom';
 
 function HomeStd() {
     const [menuOpen, setMenuOpen] = useState(false);
-    
+    const navigate = useNavigate();
  return (
    <div className="bg-gray-900 text-white min-h-screen flex flex-col">
        <header className="flex justify-between items-center px-10 py-4 bg-gray-800 text-white">
            <img src={logo} alt="Logo" className="h-16" />
 
-           
+           {/* Hamburger Menu for Mobile */}
            <button
            className="lg:hidden focus:outline-none"
            onClick={() => setMenuOpen(!menuOpen)}
@@ -36,15 +36,15 @@ function HomeStd() {
                menuOpen ? "block" : "hidden"
            } lg:flex lg:space-x-6 absolute lg:static top-16 left-0 w-full lg:w-auto bg-gray-800 lg:bg-transparent lg:p-0 p-4`}
            >
-           <a href="#home" className="block lg:inline-block hover:text-blue-500 py-2">
-               Home
-           </a>
-           <a href="#about" className="block lg:inline-block hover:text-blue-500 py-2">
-               About
-           </a>
-           <a href="#contact" className="block lg:inline-block hover:text-blue-500 py-2">
-               Contact
-           </a>
+           <button onClick={() => navigate('/header')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Home
+                    </button>
+                    <button onClick={() => navigate('/about')} className="block lg:inline-block hover:text-blue-500 py-2 cursor-pointer">
+                        About
+                    </button>
+                    <button  onClick={() => navigate('/contact')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Contact
+                    </button>
            <div></div>
            <a href="https://facebook.com" className="block lg:inline-block text-gray-400 hover:text-blue-500 py-2">
                <FaFacebook size={20} />
@@ -66,11 +66,11 @@ function HomeStd() {
             </p>
             </div>
             <div className="grid grid-cols-2 grid-rows-4 font-bold text-lg text-white text-center gap-2 w-screen h-80 p-8 lg:h-96 lg:m-20  ">
-        <div className="bg-[#115DFC] rounded-lg col-span-2 row-span-2 p-12 lg:pt-16">
+        <div onClick={() => navigate('/attstd')} className="bg-[#115DFC] rounded-lg col-span-2 row-span-2 p-12 lg:pt-16">
             ATTENDANCE
         </div>
-    <div className=" bg-[#115DFC] rounded-lg row-span-2 row-start-3 p-12 lg:pt-16">TIMETABLE</div>
-    <div className=" bg-[#115DFC] rounded-lg row-span-2 row-start-3 p-12 lg:pt-16">PROFILE</div>
+    <div onClick={() => navigate('/timestd')} className=" bg-[#115DFC] rounded-lg row-span-2 row-start-3 p-12 lg:pt-16">TIMETABLE</div>
+    <div onClick={() => navigate('/prostd')} className=" bg-[#115DFC] rounded-lg row-span-2 row-start-3 p-12 lg:pt-16">PROFILE</div>
 </div>
     
         </main>

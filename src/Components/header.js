@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import hi1 from '../assets/highsc1.png';
 
@@ -12,7 +12,7 @@ function HomePage(){
         <header className="flex justify-between items-center px-10 py-4 bg-gray-800 text-white">
         <img src={logo} alt="Logo" className="h-16" />
   
-        
+        {/* Hamburger Menu for Mobile */}
         <button
           className="lg:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -37,15 +37,15 @@ function HomePage(){
             menuOpen ? "block" : "hidden"
           } lg:flex lg:space-x-6 absolute lg:static top-16 left-0 w-full lg:w-auto bg-gray-800 lg:bg-transparent lg:p-0 p-4`}
         >
-          <a href="#home" className="block lg:inline-block hover:text-blue-500 py-2">
-            Home
-          </a>
-         
-          <Link to ='/about' className='block lg:inline-block hover:text-blue-500 py-2'>
-          About</Link>
-          
-          <Link to ='/contact' className = 'block lg:inline-block hover:text-blue-500 py-2'>
-          Contact</Link>
+          <button onClick={() => navigate('/header')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Home
+                    </button>
+                    <button onClick={() => navigate('/about')} className="block lg:inline-block hover:text-blue-500 py-2 cursor-pointer">
+                        About
+                    </button>
+                    <button onClick={() => navigate('/contact')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Contact
+                    </button>
           <div></div>
           <a href="https://facebook.com" className="block lg:inline-block text-gray-400 hover:text-blue-500 py-2">
             <FaFacebook size={20} />

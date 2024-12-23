@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function About () {
      const [menuOpen, setMenuOpen] = useState(false);
-     
+     const navigate = useNavigate();
     return(
         <div className="bg-gray-900 text-white min-h-screen flex flex-col">
             <header className="flex justify-between items-center px-10 py-4 bg-gray-800 text-white">
@@ -36,16 +36,15 @@ function About () {
                         menuOpen ? "block" : "hidden"
                     } lg:flex lg:space-x-6 absolute lg:static top-16 left-0 w-full lg:w-auto bg-gray-800 lg:bg-transparent lg:p-0 p-4`}
                     >
-                    <a href="#home" className="block lg:inline-block hover:text-blue-500 py-2">
+                    <button  onClick={() => navigate('/header')} className="block lg:inline-block hover:text-blue-500 py-2">
                         Home
-                    </a>
-                    <Link to="/about" className="block lg:inline-block hover:text-blue-500 py-2">
-    About
-</Link>
-
-                    <a href="#contact" className="block lg:inline-block hover:text-blue-500 py-2">
+                    </button>
+                    <button onClick={() => navigate('/about')} className="block lg:inline-block hover:text-blue-500 py-2 cursor-pointer">
+                        About
+                    </button>
+                    <button  onClick={() => navigate('/contact')} className="block lg:inline-block hover:text-blue-500 py-2">
                         Contact
-                    </a>
+                    </button>
                     <div></div>
                     <a href="https://facebook.com" className="block lg:inline-block text-gray-400 hover:text-blue-500 py-2">
                         <FaFacebook size={20} />
@@ -58,7 +57,7 @@ function About () {
                     </a>
                     </nav>
             </header>
-            <main className='flex flex-col lg:flex-row items-center justify-between'>
+            <main className='flex flex-col lg:flex-col items-center justify-between'>
                 <h1 className='text-white text-4xl font-bold text-start p-10'>About Us </h1>
                 <p className='text-white font-thin text-start p-10'>Jaya Engineering College (JEC) is an ISO 9001:2000 certified institution founded in the year 1995 with a focus on technological innovation, entrepreneurship and character building to the students. The college offers 9 UG courses and 7 PG courses. JEC is Affiliated to Anna University, Chennai and approved by AICTE, New Delhi. The college management team consists of well-experienced and committed Academicians and Administrators.
 

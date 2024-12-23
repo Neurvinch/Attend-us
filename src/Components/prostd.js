@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
+import hi3 from '../assets/highsc3.png';
 
-function HomeHod() {
+function Profile() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
     
@@ -40,6 +41,15 @@ function HomeHod() {
           <button onClick={() => navigate('/header')} className="block lg:inline-block hover:text-blue-500 py-2">
                         Home
                     </button>
+                    <button   onClick={() => navigate('/attstd')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Attendance
+                    </button>
+                    <button onClick={() => navigate('/timestd')} className="block lg:inline-block hover:text-blue-500 py-2">
+                        Timetable
+                    </button>
+                    <button onClick={() => navigate('/prostd')} className="block lg:inline-block hover:text-blue-500 py-2 cursor-pointer">
+                        Profile
+                    </button>
                     <button onClick={() => navigate('/about')} className="block lg:inline-block hover:text-blue-500 py-2 cursor-pointer">
                         About
                     </button>
@@ -59,22 +69,25 @@ function HomeHod() {
            </nav>
        </header>
        <main className="flex flex-col lg:flex-row items-center justify-between">
-        <div className="  px-20 text-center lg:text-start pt-10">
-            <h1 className="text-6xl font-bold mb-5">Welcome HOD..!</h1>
-            <p className="text-lg mb-4">Your friendly college attendance tracker</p>
-            <p className="text-gray-400 mb-6">
-              Say hello to stress-free tracking and organizing attendance is quick, easy, and fun.
-            </p>
+       
+        <div className="  px-24 text-start lg:text-start pt-10 lg:mx-24">
+            <h1 className='font-bold text-4xl pb-10'>profile</h1>
+            <p className="text-lg mb-4">Name : Nisha</p>
+            <p className="text-lg mb-4">Reg no : 10012121</p>
+            <p className="text-lg mb-4">DOB : 18-12-2005 </p>
+            <p className="text-lg mb-4">Branch : BE </p>
+            <p className="text-lg mb-4">Dept : CSE</p>
+            <p className="text-lg mb-4">Semester : 03</p>
+            <p className="text-lg mb-4">Address : 19/20 thiyagaraja st chennai-62</p>
+            <p className="text-lg mb-4">Contact no : 292929292</p>
+            <p className="text-lg mb-4">Email : abc@fmail.com</p>
+            
             </div>
-                    
-            <div className="grid grid-cols-2 grid-rows-10 gap-4 font-bold text-lg  text-white  uppercase w-screen text-center  h-80 p-8 lg:h-96 lg:m-20">
-            <div onClick={() => navigate('/hodatt')} className="bg-[#115DFC] rounded-lg row-span-8 row-start-3 pt-20 lg:pt-20">timetable</div>
-            <div onClick={() => navigate('/hodtime')} className="bg-[#115DFC] rounded-lg row-span-8 row-start-3 pt-20 lg:pt-20">attendance</div>
-        </div>  
+            <img src={hi3} alt="imag" className=" lg:m-20 max-w-screen-xl " /> 
         </main>
     </div>
     
   );
 }
 
-export default HomeHod;
+export default Profile;

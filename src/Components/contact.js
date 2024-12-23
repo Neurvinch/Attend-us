@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
+import hi1 from '../assets/highsc1.png';
 
-function HomeHod() {
+function Contact() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
     
@@ -59,22 +60,18 @@ function HomeHod() {
            </nav>
        </header>
        <main className="flex flex-col lg:flex-row items-center justify-between">
-        <div className="  px-20 text-center lg:text-start pt-10">
-            <h1 className="text-6xl font-bold mb-5">Welcome HOD..!</h1>
-            <p className="text-lg mb-4">Your friendly college attendance tracker</p>
+        <div className="  px-24 text-center lg:text-center pt-10">
+            <h1 className=" text-6xl font-bold mb-5">Contact Us...</h1>
+            <p className="text-lg mb-4">Phone : 044-26300982, 26341264, 26390041.</p>
             <p className="text-gray-400 mb-6">
-              Say hello to stress-free tracking and organizing attendance is quick, easy, and fun.
+            Email : admission@jec.ac.in, info@jec.ac.in
             </p>
             </div>
-                    
-            <div className="grid grid-cols-2 grid-rows-10 gap-4 font-bold text-lg  text-white  uppercase w-screen text-center  h-80 p-8 lg:h-96 lg:m-20">
-            <div onClick={() => navigate('/hodatt')} className="bg-[#115DFC] rounded-lg row-span-8 row-start-3 pt-20 lg:pt-20">timetable</div>
-            <div onClick={() => navigate('/hodtime')} className="bg-[#115DFC] rounded-lg row-span-8 row-start-3 pt-20 lg:pt-20">attendance</div>
-        </div>  
+            <img src={hi1} alt="imag" className=" pt-20 " /> 
         </main>
     </div>
     
   );
 }
 
-export default HomeHod;
+export default Contact;
