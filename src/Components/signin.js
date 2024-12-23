@@ -1,4 +1,4 @@
-
+/// need to mege with login comp
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import hi2 from '../assets/highsc2.png';

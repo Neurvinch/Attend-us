@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import hi1 from '../assets/highsc1.png';
 
@@ -40,12 +40,12 @@ function HomePage(){
           <a href="#home" className="block lg:inline-block hover:text-blue-500 py-2">
             Home
           </a>
-          <a href="#about" className="block lg:inline-block hover:text-blue-500 py-2">
-            About
-          </a>
-          <a href="#contact" className="block lg:inline-block hover:text-blue-500 py-2">
-            Contact
-          </a>
+         
+          <Link to ='/about' className='block lg:inline-block hover:text-blue-500 py-2'>
+          About</Link>
+          
+          <Link to ='/contact' className = 'block lg:inline-block hover:text-blue-500 py-2'>
+          Contact</Link>
           <div></div>
           <a href="https://facebook.com" className="block lg:inline-block text-gray-400 hover:text-blue-500 py-2">
             <FaFacebook size={20} />

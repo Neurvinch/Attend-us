@@ -11,6 +11,8 @@ const atdRoutes = require('../Backend/Routes/Attendance');
  app.use('/apiV1',AuthRoutes);
 app.use('/apiV1/timetable', TTRoutes);
 app.use('/apiV1/attendance',atdRoutes);
- ap.listen(5000,()=>{
+ 
+
+app.listen(5000,()=>{
     console.log('server is running nov!')   
  });
