@@ -5,6 +5,12 @@ const TTRoutes = require('../Backend/Routes/TimeTable');
 const atdRoutes = require('../Backend/Routes/Attendance');
 // connect toth emongoDB
 
+mongoose.connect( process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+
  const app = express();
  app.use(express.json());
 

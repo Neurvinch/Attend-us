@@ -18,7 +18,7 @@ router.get('/:studentId',AuthenticateToken,async(res,req) =>{
 router.post('/mark',AuthenticateToken,async(res,req) =>{
 const{studentId,date,status} = req.body
     try {
-         const newAttendance = await new Attendance({studentId,date,status});
+         const newAttendance = new Attendance({studentId,date,status});
          await newAttendance.save();
          res.json({message:"attendance marked sucessfully "});        
     } catch (error) {
