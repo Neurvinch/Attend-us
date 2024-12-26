@@ -16,7 +16,7 @@ const TimeTable = () => {
  
     const fetchTimeTable = async () =>{
        try {
-          const response = await axios.get('http://localhost:5000/api/timetable');
+          const response = await axios.get('http://localhost:5000/apiV1/timetable');
           SetTimeTable(response.data);
        } catch (error) {
         console.error(" Error fetching timetable", error);
